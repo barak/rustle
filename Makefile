@@ -10,10 +10,6 @@ SCM_FLAGS = -scrutinize
 
 all: main
 
-# Build rule for object files
-%.o: %.c %.h
-	$(CC) -c -o $@ $< $(CFLAGS)
-
 # Runtime library for compiled scm files
 runtime.a: $(OBJS)
 	ar cvr libruntime.a $^
