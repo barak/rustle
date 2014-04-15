@@ -17,8 +17,7 @@ SCM_FLAGS = -scrutinize
 all: main
 
 base.o: base.h
-builtin.o: builtin.h
-runtime.o: runtime.h
+runtime.o builtin.o: builtin.h runtime.h base.h
 
 # Runtime library for compiled scm files
 libruntime.a: $(OBJS)
