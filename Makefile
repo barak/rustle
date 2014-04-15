@@ -3,6 +3,7 @@ CFLAGS += -g -std=c99
 CFLAGS += -O2
 CFLAGS += -Wshadow -Wall -Wno-unused-variable -Wno-error=unused-but-set-variable
 CFLAGS += -Werror
+# CFLAGS += -Wextra
 
 CPPFLAGS = -D_GNU_SOURCE -D_DEBUG_ -I.
 
