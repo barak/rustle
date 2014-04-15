@@ -22,7 +22,7 @@ libruntime.a: $(OBJS)
 main: $(SCM_SRCS) libruntime.a
 	$(SCM) $(SCM_FLAGS) $<
 
-.PHONY: clean
+.PHONY: all clean
 clean :
 	-rm -f *.so *.o *.a main *.s *.i
 	-find tests/ -not -iname '*.scm' -type f |xargs rm  2>/dev/null
