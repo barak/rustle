@@ -12,7 +12,7 @@
 
 object *new_object(char type) {
   object *res = malloc(sizeof(object));
-  bzero(res,sizeof(object));
+  memset(res, 0, sizeof(object));
   res->type = type;
   return res;
 }
@@ -58,7 +58,7 @@ void obj_set_sym_val(object *obj, const char *sym) {
 
 object *new_static_object(char type, void *value){
   object *res = malloc(sizeof(object));;
-  bzero(res, sizeof(object));
+  memset(res, 0, sizeof(object));
   res->type = type;
   switch (type) {
   case T_INT:
@@ -89,7 +89,7 @@ const char* obj_type_name(object *a) {
 }
 
 void init_env(environ *env) {
-  bzero(env, sizeof(environ));
+  memset(env, 0, sizeof(environ));
   if (hcreate_r(1024, &(env->table)) == 0){
     FatalError("Error setting up hashtable");
   }

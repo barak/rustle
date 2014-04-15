@@ -28,6 +28,6 @@ void *mallocz(size_t size) {
   if (buf == NULL) {
     FatalSysError("malloc failed");
   }
-  bzero(buf, size);
+  memset(buf, 0, size);
   return buf;
 }

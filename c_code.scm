@@ -133,7 +133,7 @@
   ;; Set up argument list
   (define arg-list (c-varname "args"))
   (emit-code (sprintf "object **~a = malloc(sizeof(object *) * ~a);" arg-list (length args)))
-  (emit-code (sprintf "bzero(~a, sizeof(object *) * ~a);" arg-list (length args)))
+  (emit-code (sprintf "memset(~a, 0, sizeof(object *) * ~a);" arg-list (length args)))
   (let loop ((args args)
              (n 0))
     (cond ((not (null? args))
