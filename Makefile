@@ -15,11 +15,11 @@ builtin.o: builtin.h
 runtime.o: runtime.h
 
 # Runtime library for compiled scm files
-runtime.a: $(OBJS)
-	ar cvr libruntime.a $^
+libruntime.a: $(OBJS)
+	ar cvr $@ $^
 
 # Main compiler binary, compiles the C runtime library first.
-main: $(SCM_SRCS) runtime.a
+main: $(SCM_SRCS) libruntime.a
 	$(SCM) $(SCM_FLAGS) $<
 
 .PHONY: clean
