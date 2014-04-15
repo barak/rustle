@@ -1,5 +1,10 @@
 CC = gcc
-CFLAGS = -g -Werror -Wshadow -std=c99 -Wall -Wno-unused-variable -Wno-error=unused-but-set-variable -D_GNU_SOURCE -D_DEBUG_ -I.
+CFLAGS += -g -std=c99
+CFLAGS += -O2
+CFLAGS += -Wshadow -Wall -Wno-unused-variable -Wno-error=unused-but-set-variable
+CFLAGS += -Werror
+
+CPPFLAGS = -D_GNU_SOURCE -D_DEBUG_ -I.
 
 C_SRCS = base.c runtime.c builtin.c
 OBJS = $(patsubst %.c,%.o,$(C_SRCS))
