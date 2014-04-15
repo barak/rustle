@@ -10,6 +10,10 @@ SCM_FLAGS = -scrutinize
 
 all: main
 
+base.o: base.h
+builtin.o: builtin.h
+runtime.o: runtime.h
+
 # Runtime library for compiled scm files
 runtime.a: $(OBJS)
 	ar cvr libruntime.a $^
